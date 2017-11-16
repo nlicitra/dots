@@ -1,0 +1,11 @@
+[user]
+    name = nlicitra
+    email = nickerous@gmail.com
+[core]
+    editor = /usr/bin/vim
+[alias]
+    dunzo = !git checkout master && git pull origin master && git branch -D $(git rev-parse --abbrev-ref @{-1})
+    acoma = !git add -A && git commit -m
+    publish = !git push -u origin $(git branch-name)
+    unpublish = !git push origin :$(git branch-name)
+    cleanup = !git remote prune origin && git gc && git clean -dfx && git stash clear
