@@ -23,17 +23,21 @@ function install_vundle() {
 function backup() {
   mv -v ~/.config/i3 backup/
   mv -v ~/.config/i3status backup/
+  mv -v ~/.config/compton.conf backup/
   mv -v ~/.gitconfig backup/
   mv -v ~/.vimrc backup/
   mv -v ~/.zshrc backup/
+  mv -v ~/.fonts backup/
 }
 
 function link() {
   ln -sfnv $PWD/.config/i3 ~/.config/i3
   ln -sfnv $PWD/.config/i3status ~/.config/i3status
+  ln -sfnv $PWD/.config/compton.conf ~/.config/compton.conf
   ln -sfnv $PWD/.gitconfig ~/.gitconfig
   ln -sfnv $PWD/.vimrc ~/.vimrc
   ln -sfnv $PWD/.zshrc ~/.zshrc
+  ln -sfnv $PWD/.fonts ~/.fonts
 }
 
 if [[ "$arg" == "-i" || "$arg" == "--install" ]]; then

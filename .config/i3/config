@@ -187,12 +187,8 @@ for_window [class="*"] border pixel 0
 gaps outer 50
 gaps inner 50
 
-exec compton --config /home/nick/.config/compton.conf
+exec compton --config ~/.config/compton.conf
 exec --no-startup-id reset-display
 
 # Set background
-exec_always feh --bg-scale /home/nick/wallpaper/field.jpg
-
-exec --no-startup-id i3-msg 'workspace $ws1; exec google-chrome'
-exec --no-startup-id i3-msg 'workspace $ws1; exec code'
-exec --no-startup-id i3-msg 'workspace $ws1: append_layout /home/nick/.config/i3/workspace-1.json'
+exec_always feh --bg-scale ~/wallpaper/default.jpg
