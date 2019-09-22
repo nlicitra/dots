@@ -1,5 +1,9 @@
 #!/bin/bash
 
+install-zsh() {
+  pacman -S --noconfirm zsh
+}
+
 install-docker() {
   pacman -S --noconfirm docker
   gpasswd -a $(is -u -n) docker
@@ -10,8 +14,7 @@ install-python() {
 }
 
 install-nvm() {
-  pacman -S --noconfirm nvm
-  nvm alias default lts/*
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | $SHELL
 }
 
 install-vim() {
@@ -30,9 +33,11 @@ install-compton() {
   pacman -S --noconfirm compton
 }
 
+install-zsh
 install-git
+install-vim
 install-docker
 install-python
-install-nvm
 install-i3
 install-compton
+install-nvm

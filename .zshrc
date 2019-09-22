@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$PATH:~/.local/bin/
+export PATH=$PATH:$HOME/.local/bin/
 
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -30,4 +30,4 @@ alias skyvpn='sudo openvpn --config ~/.vpn/skyword/client.ovpn'
 alias ku='kubectl'
 alias pip='pip3'
 
-setxkbmap -option caps:ctrl_modifier
+#setxkbmap -option caps:ctrl_modifier
