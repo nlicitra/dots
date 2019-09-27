@@ -26,7 +26,7 @@ install-git() {
 }
 
 install-i3() {
-  pacman -S --noconfirm i3
+  pacman -S --noconfirm i3 xorg-init rofi feh kitty
 }
 
 install-compton() {

@@ -20,7 +20,7 @@ function install_vundle() {
   vim +PluginUpdate +qall
 }
 
-DOT_FILES=(.config/i3 .config/i3status .config/compton.conf .gitconfig .vimrc .zshrc .fonts)
+DOT_FILES=(.config/i3 .config/i3status .config/compton.conf .config/kitty/kitty.conf .gitconfig .vimrc .zshrc .fonts, wallpaper)
 
 function backup() {
   mkdir -p backup

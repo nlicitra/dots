@@ -30,4 +30,4 @@ alias skyvpn='sudo openvpn --config ~/.vpn/skyword/client.ovpn'
 alias ku='kubectl'
 alias pip='pip3'
 
-#setxkbmap -option caps:ctrl_modifier
+setxkbmap -option caps:ctrl_modifier
