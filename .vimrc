@@ -51,7 +51,6 @@ set wrap
 set wrapmargin=0
 set noswapfile 		" No swap files because they cause clutter and YOLO
 set hls
-set guifont=Fira\ Code\ Retina\ 12
 
 set t_vb=. " disable that annoying flash and bell
 
@@ -61,6 +60,8 @@ set tabstop=8 softtabstop=0 expandtab smarttab
 
 " Associate html syntax with .template files
 au BufNewFile,BufRead *.template set filetype=html
+" Highlight Rofi Template files using CSS
+au BufNewFile,BufRead *.rasi set filetype=css
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
@@ -100,6 +101,8 @@ let NERDTreeShowHidden=0
 
 " FZF {{{
 map <C-p> :FZF<CR>
+" The below command isn't working even though all docs say to try it
+" let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g""'
 "}}}
 
 " NerdCommenter {{{

@@ -38,15 +38,16 @@ focus_follows_mouse no
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 100 opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575CD" -font "$font-face $font-size"
-#
+bindsym $mod+d exec rofi -show drun
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -191,4 +192,5 @@ exec compton --config $HOME/.config/compton.conf
 exec --no-startup-id reset-display
 
 # Set background
-exec_always feh --bg-scale $HOME/wallpaper/default.jpg
+exec_always feh --bg-scale $HOME/wallpaper/field.jpg
+

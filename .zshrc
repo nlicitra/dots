@@ -30,4 +30,7 @@ alias skyvpn='sudo openvpn --config ~/.vpn/skyword/client.ovpn'
 alias ku='kubectl'
 alias pip='pip3'
 
+# FZF override to respect .gitignore when deciding what to exclude
+#export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
 setxkbmap -option caps:ctrl_modifier
