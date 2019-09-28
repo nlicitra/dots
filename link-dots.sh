@@ -1,18 +1,18 @@
 #!/bin/bash
 
-DOT_FILES=( /
-  .config/i3 /
-  .config/i3status /
-  .config/polybar /
-  .config/rofi /
-  .config/compton.conf /
-  .config/kitty/kitty.conf /
-  .gitconfig /
-  .vimrc /
-  .zshrc /
-  .fonts /
-  .icons /
-  wallpaper /
+DOT_FILES=(
+  .config/i3
+  .config/i3status
+  .config/polybar
+  .config/rofi
+  .config/compton.conf
+  .config/kitty/kitty.conf
+  .gitconfig
+  .vimrc
+  .zshrc
+  .fonts
+  .icons
+  wallpaper
 )
 
 function get_destination() {
