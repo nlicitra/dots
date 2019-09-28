@@ -1,0 +1,17 @@
+configuration {
+  lines: 6;
+  show-icons: true;
+  terminal: "kitty";
+  drun-icon-theme: "Luv";
+  combi-modi: "window,drun,run";
+  hide-scrollbar: true;
+  theme: ".config/rofi/ayu-mirage";
+  combi-hide-mode-prefix: true;
+  display-window: "Windows";
+  display-windowcd: "Windows";
+  display-run: "Commands";
+  display-ssh: "SSH";
+  display-drun: "度";
+  display-combi: "All";
+  display-keys: "Keys";
+}

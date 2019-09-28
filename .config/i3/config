@@ -6,7 +6,7 @@
 #
 
 set $font-face Fira Code Retina
-set $font-size 13
+set $font-size 12
 
 set $bg-color "#2F343F"
 set $text-color "#F3F4F5"
