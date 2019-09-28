@@ -1,6 +1,19 @@
 #!/bin/bash
 
-DOT_FILES=(.config/i3 .config/i3status .config/rofi .config/compton.conf .config/kitty/kitty.conf .gitconfig .vimrc .zshrc .fonts .icons wallpaper)
+DOT_FILES=( /
+  .config/i3 /
+  .config/i3status /
+  .config/polybar /
+  .config/rofi /
+  .config/compton.conf /
+  .config/kitty/kitty.conf /
+  .gitconfig /
+  .vimrc /
+  .zshrc /
+  .fonts /
+  .icons /
+  wallpaper /
+)
 
 function get_destination() {
   file=$1
@@ -32,5 +45,5 @@ function link() {
 
 echo -e "\u001b[32;1mBacking up dotfiles...\u001b[0m"
 backup
-echo -e "\u001b[32;1mLinkin dotfiles...\u001b[0m"
+echo -e "\u001b[32;1mLinking dotfiles...\u001b[0m"
 link
