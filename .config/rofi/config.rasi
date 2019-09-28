@@ -11,7 +11,7 @@ configuration {
   display-windowcd: "Windows";
   display-run: "Commands";
   display-ssh: "SSH";
-  display-drun: "度";
+  display-drun: "⏣";
   display-combi: "All";
   display-keys: "Keys";
 }
