@@ -95,8 +95,8 @@ colorscheme nord
 " NerdTree {{{
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.DS_Store$']
-let NERDTreeWinSize = 50
-let NERDTreeShowHidden=0
+let NERDTreeWinSize = 30
+let NERDTreeShowHidden=1
 "}}}
 
 " FZF {{{
