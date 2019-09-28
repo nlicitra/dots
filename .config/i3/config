@@ -192,5 +192,5 @@ exec compton --config $HOME/.config/compton.conf
 exec --no-startup-id reset-display
 
 # Set background
-exec_always feh --bg-scale $HOME/wallpaper/field.jpg
+exec_always feh --bg-scale $HOME/wallpaper/${DESKTOP_BG_IMAGE:-default.jpg}
 
