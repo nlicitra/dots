@@ -53,12 +53,12 @@ install-git() {
 install-i3() {
   case $os in
     arch)
-      $install i3 xorg-init rofi feh kitty compton
+      $install i3 xorg-init rofi feh kitty compton dunst polybar
     ;;
     ubuntu)
       sudo add-apt-repository ppa:kgilmer/speed-ricer
       sudo apt update
-      $install i3-gaps-wm rofi feh kitty polybar compton
+      $install i3-gaps-wm rofi feh kitty polybar compton dunst
     ;;
   esac
 }
