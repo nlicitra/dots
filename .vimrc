@@ -62,6 +62,7 @@ set tabstop=8 softtabstop=0 expandtab smarttab
 au BufNewFile,BufRead *.template set filetype=html
 " Highlight Rofi Template files using CSS
 au BufNewFile,BufRead *.rasi set filetype=css
+au BufNewFile,BufRead *polybar/config set filetype=dosini
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle

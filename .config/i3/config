@@ -44,6 +44,9 @@ bindsym $mod+Return exec kitty
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# lock the screen
+bindsym $mod+Shift+Return exec i3lock -i $HOME/wallpaper/lock.png -t -e
+
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec rofi -show drun

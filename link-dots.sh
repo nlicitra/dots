@@ -12,6 +12,8 @@ DOT_FILES=(
   .zshrc
   .fonts
   .icons
+  .Xmodmap
+  .xinitrc
   wallpaper
 )
 

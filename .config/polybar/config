@@ -18,7 +18,7 @@ background = #222
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #bbb
-primary = #ffb52a
+primary = #3DD490
 secondary = #e60053
 alert = #bd2c40
 transparent = #00000000
@@ -29,7 +29,7 @@ transparent = #00000000
 width = 100%
 height = 30
 radius = 0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -40,23 +40,22 @@ line-color = #f00
 border-size = 0 
 border-color = #00000000
 
-padding-left = 0
-padding-right = 2
+;padding-left = 1
+;padding-right = 2
 
-module-margin-left = 0
-module-margin-right = 0
+module-margin = 2
 
 ; Fonts (font-0 is for text, font-1 is for icons, font-2 is for module hidden icons)
 
-font-0 = SF Pro Display:size=12;3
-font-1 = FuraCode Nerd Font:size=14;3
+font-0 = SF Pro Display:size=20;3
+font-1 = FuraCode Nerd Font:size=20;3
 font-2 = FuraCode Nerd Font:size=19;4
 
 ; Module location
 
-modules-left = bspwm arrow_left_1 arrow_left_2 arrow_left_3
-modules-center = middle 
-modules-right = arrow_right_3 arrow_right_2 arrow_right_1 memory cpu wlan date powermenu
+modules-left = memory cpu battery
+modules-center = i3
+modules-right = temperature wlan date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -64,102 +63,21 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-; The six modules below are for transparency
+; The two modules below are for the diagonal bar ends
 
-[module/arrow_left_1]
+[module/right_arrow]
 type = custom/text
 content = 
 content-foreground = ${colors.background} 
 content-background = ${colors.transparent}
 content-font = 3
 
-[module/arrow_left_2]
-type = custom/text
-content = ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-content-foreground = ${colors.transparent} 
-content-background = ${colors.transparent}
-content-font = 2
-
-[module/arrow_left_3]
+[module/left_arrow]
 type = custom/text
 content = 
 content-foreground = ${colors.background} 
 content-background = ${colors.transparent}
 content-font = 3
-
-[module/arrow_right_1]
-type = custom/text
-content = 
-content-foreground = ${colors.background}
-content-background = ${colors.transparent}
-content-font = 3
-
-[module/arrow_right_2]
-type = custom/text
-content = ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-content-foreground = ${colors.transparent} 
-content-background = ${colors.transparent}
-content-font = 2
-
-[module/arrow_right_3]
-type = custom/text
-content = 
-content-foreground = ${colors.background} 
-content-background = ${colors.transparent}
-content-font = 3
-
-[module/middle]
-type = custom/text
-content = "no cool script here, sorry"
-content-font = 2
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = 
-;label-focused-background = ${colors.background-alt}
-label-focused-padding = 2
-
-label-occupied = 
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = 
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -171,7 +89,7 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
@@ -201,42 +119,6 @@ label-urgent-padding = 2
 ; Separator in between workspaces
 ; label-separator = |
 
-
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
 [module/cpu]
 type = internal/cpu
 interval = 2
@@ -251,10 +133,10 @@ format-prefix = "  "
 ;format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage_used%
-
+
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlp59s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -297,8 +179,8 @@ interval = 5
 date =
 date-alt = " %Y-%m-%d"
 
-time = %H:%M
-time-alt = %H:%M:%S
+time = %I:%M%p
+time-alt = %I:%M:%S%p
 
 format-prefix ="  "
 format-prefix-foreground = ${colors.foreground-alt}
@@ -314,33 +196,6 @@ label-volume-foreground = ${root.foreground}
 
 label-muted = 🔇 muted
 label-muted-foreground = #666
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
-[module/alsa]
-type = internal/alsa
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -375,20 +230,20 @@ format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 0xf579
+;ramp-capacity-1 = 
+;ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
 animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+;animation-charging-1 = 
+;animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 = 
+;animation-discharging-1 = 
+;animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
@@ -398,7 +253,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+format-underline = #c9c9c9
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -450,8 +305,6 @@ screenchange-reload = true
 ;pseudo-transparency = false
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
-
-; vim:ft=dosini
+margin-top = 0
+margin-bottom = 0
 
