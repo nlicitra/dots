@@ -30,6 +30,7 @@ function install_vundle() {
 
 function install_scripts() {
   sudo ln -sfnv $PWD/scripts/reset-displays.sh /usr/local/bin/reset-displays
+  sudo ln -sfnv $PWD/scripts/compton-blur /usr/local/bin/compton-blur
 }
 
 function install_nvm() {

@@ -53,12 +53,13 @@ install-git() {
 install-i3() {
   case $os in
     arch)
-      $install i3 xorg-init rofi feh kitty compton dunst polybar
+      $install i3 xorg-init rofi feh kitty compton dunst polybar flashfocus-git
     ;;
     ubuntu)
       sudo add-apt-repository ppa:kgilmer/speed-ricer
       sudo apt update
-      $install i3-gaps-wm rofi feh kitty polybar compton dunst
+      $install i3-gaps-wm rofi feh kitty polybar compton dunst libxcb-render0-dev libffi-dev python-dev python-cffi
+      pip install flashfocus
     ;;
   esac
 }

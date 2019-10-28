@@ -34,6 +34,8 @@ focus_follows_mouse no
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+default_border none
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -104,6 +106,16 @@ bindsym $mod+m exec resize-display
 # focus the child container
 #bindsym $mod+d focus child
 
+title_align center
+
+# Update window titlebar colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #3f5745 #5f997c #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -115,7 +127,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "Spotify"
+set $ws10 "0"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -180,12 +192,10 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # i3-gaps configs
-for_window [class="*"] border pixel 0
 gaps outer 50
 gaps inner 50
 
-exec compton --config $HOME/.config/compton.conf
-exec --no-startup-id reset-display
+exec --no-startup-id $(which reset-display)
 
 # Set background
 exec_always feh --bg-scale $HOME/wallpaper/${DESKTOP_BG_IMAGE:-default.jpg}
