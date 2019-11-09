@@ -10,10 +10,10 @@ function install_oh_my_zsh() {
 function install_zsh_plugins() {
   autosuggest_dest=$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
   if [[ ! -e $autosuggest_dest ]]; then
-    git clone https://github.com/zsh-users/zsh-autosuggestions $autosuggest_des
+    git clone https://github.com/zsh-users/zsh-autosuggestions $autosuggest_dest
   fi
 
-  fastsyntax_dest=$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  fastsyntax_dest=$HOME/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
   if [[ ! -e $fastsyntax_dest ]]; then
     git clone https://github.com/zdharma/fast-syntax-highlighting.git $fastsyntax_dest
   fi
@@ -28,18 +28,10 @@ function install_vundle() {
   vim +PluginUpdate +qall
 }
 
-function install_scripts() {
-  sudo ln -sfnv $PWD/scripts/reset-displays.sh /usr/local/bin/reset-displays
-}
-
 function install_nvm() {
   if [[ -z $NVM_DIR ]]; then
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | $SHELL
   fi
 }
 
-install_oh_my_zsh
 install_zsh_plugins
-install_vundle
-install_nvm
-install_scripts
