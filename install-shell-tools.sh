@@ -41,4 +41,5 @@ function install_nvm() {
 install_oh_my_zsh
 install_zsh_plugins
 install_vundle
+install_nvm
 install_scripts
