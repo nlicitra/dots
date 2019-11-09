@@ -10,10 +10,10 @@ function install_oh_my_zsh() {
 function install_zsh_plugins() {
   autosuggest_dest=$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
   if [[ ! -e $autosuggest_dest ]]; then
-    git clone https://github.com/zsh-users/zsh-autosuggestions $autosuggest_des
+    git clone https://github.com/zsh-users/zsh-autosuggestions $autosuggest_dest
   fi
 
-  fastsyntax_dest=$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  fastsyntax_dest=$HOME/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
   if [[ ! -e $fastsyntax_dest ]]; then
     git clone https://github.com/zdharma/fast-syntax-highlighting.git $fastsyntax_dest
   fi
