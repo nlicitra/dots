@@ -4,8 +4,11 @@ export PATH=$PATH:$HOME/.local/bin/
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Fix weird keyboard mapping issues
-export TERM=ansi
+# ssh specific configs
+if [[ -n $SSH_CONNECTION ]]; then
+  # Fix weird keyboard mapping issues for
+  export TERM=ansi
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
