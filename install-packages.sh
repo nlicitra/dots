@@ -31,7 +31,7 @@ install-docker() {
       $install docker-ce docker-ce-cli containerd.io
     ;;
   esac
-  gpasswd -a $(is -u -n) docker
+  sudo gpasswd -a $(is -u -n) docker
 }
 
 install-python() {
@@ -53,7 +53,15 @@ install-git() {
 install-i3() {
   case $os in
     arch)
-      $install i3 xorg-init rofi feh kitty compton dunst polybar flashfocus-git
+      $install i3 xorg-randr xorg-init rofi feh kitty compton dunst flashfocus-git
+      cd /tmp/
+      curl -L -O https://aur.archlinux.org/cgit/aur.git/snapshot/polybar.tar.gz
+      tar -xvf polybar.tar.gz
+      cd polybar
+      makepkg -siC --noconfirm
+      cd -
+      rm polybar.tar.gz
+      cd -
     ;;
     ubuntu)
       sudo add-apt-repository ppa:kgilmer/speed-ricer
