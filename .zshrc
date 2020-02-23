@@ -21,6 +21,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Load custom env variables
+[ -s "$HOME/.env" ] && source "$HOME/.env"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -29,8 +32,14 @@ export NVM_DIR="$HOME/.nvm"
 alias skyvpn='sudo openvpn --config ~/.vpn/skyword/client.ovpn' 
 alias ku='kubectl'
 alias pip='pip3'
+alias clock='tty-clock -sbct -C 1'
 
 # FZF override to respect .gitignore when deciding what to exclude
 #export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
-setxkbmap -option caps:ctrl_modifier
+# Modifying /etc/default/keyboard is a better solution but
+# keeping this here in case that is not an option
+#setxkbmap -option caps:ctrl_modifier
+
+# zsh completion
+fpath=($fpath "$HOME/.zsh/completion")

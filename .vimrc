@@ -52,7 +52,7 @@ set wrapmargin=0
 set noswapfile 		" No swap files because they cause clutter and YOLO
 set hls
 
-set t_vb=. " disable that annoying flash and bell
+set t_vb= " disable that annoying flash and bell
 
 set tabstop=8 softtabstop=0 expandtab smarttab
 
@@ -62,6 +62,7 @@ set tabstop=8 softtabstop=0 expandtab smarttab
 au BufNewFile,BufRead *.template set filetype=html
 " Highlight Rofi Template files using CSS
 au BufNewFile,BufRead *.rasi set filetype=css
+au BufNewFile,BufRead *polybar/config set filetype=dosini
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle
