@@ -101,7 +101,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # Fix the layout of workspaces when adding or removing displays
-bindsym $mod+m exec resize-display
+bindsym $mod+m exec "/usr/local/bin/reset-display"
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -115,6 +115,15 @@ client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+# Float some windows
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
