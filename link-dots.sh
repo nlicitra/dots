@@ -33,19 +33,19 @@ function backup() {
   mkdir -p backup
   for file in "${DOT_FILES[@]}"; do
     if [ -e $HOME/$file ]; then
-      mv -v $HOME/$file backup/
+      sudo mv -v $HOME/$file backup/
     fi
   done
 }
 
-function link() {
+function linkfiles() {
   for file in "${DOT_FILES[@]}"; do
     destination=$(get_destination $file)
-    ln -sfnv $PWD/$file $HOME/$destination
+    sudo ln -sfnv $PWD/$file $HOME/$destination
   done
 }
 
 echo -e "\u001b[32;1mBacking up dotfiles...\u001b[0m"
 backup
 echo -e "\u001b[32;1mLinking dotfiles...\u001b[0m"
-link
+linkfiles
