@@ -41,7 +41,8 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec kitty
+#bindsym $mod+Return exec kitty
+bindsym $mod+Return exec "cool-retro-term --profile Noki"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -207,5 +208,5 @@ gaps inner 50
 exec --no-startup-id $(which reset-display)
 
 # Set background
-exec_always feh --bg-scale $HOME/wallpaper/${DESKTOP_BG_IMAGE:-default.jpg}
+exec_always feh --bg-scale ${DESKTOP_BG_IMAGE:-$HOME/wallpaper/default.jpg}
 

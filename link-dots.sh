@@ -5,6 +5,7 @@ DOT_FILES=(
   .config/i3status
   .config/polybar
   .config/rofi
+  .config/cool-retro-term
   .config/compton.conf
   .config/kitty/kitty.conf
   .gitconfig

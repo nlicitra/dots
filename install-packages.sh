@@ -64,10 +64,24 @@ install-i3() {
   esac
 }
 
+install-termainl() {
+  case $os in
+    arch)
+      $install cool-retro-term
+    ;;
+    ubuntu)
+      sudo add-apt-repository ppa:vantuz/cool-retro-term
+      sudo apt update
+      $install cool-retro-term
+    ;;
+  esac
+}
+
 $update
 install-zsh
 install-git
 install-vim
 install-docker
 install-python
+install-terminal
 install-i3
