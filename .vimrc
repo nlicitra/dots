@@ -50,9 +50,9 @@ set wildmenu
 set wrap
 set wrapmargin=0
 set noswapfile 		" No swap files because they cause clutter and YOLO
-set hls
+set hls                 " highlight matches without moving
 
-set t_vb= " disable that annoying flash and bell
+set t_vb=               " disable that annoying flash and bell
 
 set tabstop=8 softtabstop=0 expandtab smarttab
 
@@ -68,29 +68,28 @@ au BufNewFile,BufRead *polybar/config set filetype=dosini
 " Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" {{{
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" Let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'srcery-colors/srcery-vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'junegunn/fzf'
+Plug 'vim-airline/vim-airline'
+Plug 'dense-analysis/ale'
+Plug 'airblade/vim-gitgutter'
+Plug 'ryanoasis/vim-devicons'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'chriskempson/base16-vim'
 
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'srcery-colors/srcery-vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'junegunn/fzf'
-Plugin 'vim-airline/vim-airline'
-Plugin 'dense-analysis/ale'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'ryanoasis/vim-devicons'
-
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 " Color Schemes {{{
 colorscheme nord
+"colorscheme base16-default-dark
 "}}}
 
 " NerdTree {{{
@@ -124,10 +123,15 @@ let g:airline_theme = 'deus'
 
 " GitGutter {{{
 "set signcolumn=yes
-let g:gitgutter_sign_added = ''
-let g:gitgutter_sign_modified = ''
-let g:gitgutter_sign_removed = ''
-let g:gitgutter_sign_modified_removed = ''
+let g:gitgutter_sign_added = ''
+let g:gitgutter_sign_modified = ''
+let g:gitgutter_sign_removed = ''
+let g:gitgutter_sign_modified_removed = ''
+
+"let g:gitgutter_sign_added = ''
+"let g:gitgutter_sign_modified = ''
+"let g:gitgutter_sign_removed = ''
+"let g:gitgutter_sign_modified_removed = ''
 "}}}
 "
 " Ale {{{
@@ -138,8 +142,10 @@ let g:ale_linters = {
 \    'python': ['flake8']
 \}
 let g:ale_javascript_eslint_use_global=1
-let g:ale_sign_error = ''
-let g:ale_sign_warning = ''
+"let g:ale_sign_error = ''
+"let g:ale_sign_warning = ''
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
 let g:ale_sign_column_always = 1
 let g:ale_open_list=1
 let g:ale_fixers = {}

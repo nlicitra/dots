@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$PATH:$HOME/.local/bin/
 
+ZSH_DISABLE_COMPFIX=true
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -29,13 +31,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Aliases for your health
-alias skyvpn='sudo openvpn --config ~/.vpn/skyword/client.ovpn' 
 alias ku='kubectl'
 alias pip='pip3'
 alias clock='tty-clock -sbct -C 1'
 
 # FZF override to respect .gitignore when deciding what to exclude
-#export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore node_modules -g ""'
 
 # Modifying /etc/default/keyboard is a better solution but
 # keeping this here in case that is not an option
@@ -43,3 +44,11 @@ alias clock='tty-clock -sbct -C 1'
 
 # zsh completion
 fpath=($fpath "$HOME/.zsh/completion")
+
+# pyenv
+export PATH="/Users/nolicitra/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# Updating vim alias
+alias vim='/usr/local/bin/vim'

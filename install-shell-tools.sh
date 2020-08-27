@@ -20,12 +20,13 @@ function install_zsh_plugins() {
   ln -sfnv $PWD/oh-my-zsh-themes/nlicitra.zsh-theme $HOME/.oh-my-zsh/custom/themes/nlicitra.zsh-theme
 }
 
-function install_vundle() {
-  vundle=$HOME/.vim/bundle/Vundle.vim
-  if [[ ! -e $vundle ]]; then
-    git clone https://github.com/VundleVim/Vundle.vim.git $vundle
+function install_vimplug() {
+  vplug=$HOME/.vim/autoload/plug.vim
+  if [[ ! -e $vplug ]]; then
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+          https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   fi
-  vim +PluginUpdate +qall
+  vim +PlugInstall
 }
 
 function install_scripts() {
@@ -41,6 +42,6 @@ function install_nvm() {
 
 install_oh_my_zsh
 install_zsh_plugins
-install_vundle
+install_vimplug
 install_nvm
 install_scripts
