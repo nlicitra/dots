@@ -26,10 +26,6 @@ source $ZSH/oh-my-zsh.sh
 # Load custom env variables
 [ -s "$HOME/.env" ] && source "$HOME/.env"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # Aliases for your health
 alias ku='kubectl'
 alias pip='pip3'
@@ -52,3 +48,6 @@ eval "$(pyenv virtualenv-init -)"
 
 # Updating vim alias
 alias vim='/usr/local/bin/vim'
+
+# asdf version manager
+source $(brew --prefix asdf)/asdf.sh

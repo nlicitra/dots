@@ -34,14 +34,7 @@ function install_scripts() {
   sudo ln -sfnv $PWD/scripts/compton-blur /usr/local/bin/compton-blur
 }
 
-function install_nvm() {
-  if [[ -z $NVM_DIR ]]; then
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | $SHELL
-  fi
-}
-
 install_oh_my_zsh
 install_zsh_plugins
 install_vimplug
-install_nvm
 install_scripts
